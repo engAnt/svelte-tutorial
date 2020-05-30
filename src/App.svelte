@@ -7,6 +7,7 @@
 	import Nested from './Nested.svelte';
 
 	let count = 0;
+	$: doubled = count * 2;
 	function handleClick() {
 		count += 1;
 	}
@@ -20,14 +21,12 @@
 	<Nested/>
 
 	<img {src} alt="{alt_name} dances.">
-
-	<br/><br/>
-
-	<button on:click={handleClick}>
-		Clicked {count} {count === 1 ? 'time' : 'times'}
-	</button>
-
 </main>
+
+<button on:click={handleClick}>
+	Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
+<p>{count} doubled is {doubled}</p>
 
 <style>
 	main {
