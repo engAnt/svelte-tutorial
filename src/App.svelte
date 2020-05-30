@@ -5,6 +5,11 @@
 	let alt_name="A man";
 
 	import Nested from './Nested.svelte';
+
+	let count = 0;
+	function handleClick() {
+		count += 1;
+	}
 </script>
 
 <main>
@@ -15,6 +20,12 @@
 	<Nested/>
 
 	<img {src} alt="{alt_name} dances.">
+
+	<br/><br/>
+
+	<button on:click={handleClick}>
+		Clicked {count} {count === 1 ? 'time' : 'times'}
+	</button>
 
 </main>
 
