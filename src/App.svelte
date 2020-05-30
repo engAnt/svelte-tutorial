@@ -6,6 +6,7 @@
 
 	import Nested from './Nested.svelte';
 	import Nested2 from './Nested2.svelte';
+	import Info from './Info.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -25,6 +26,14 @@
 	}
 
 	$: sum = numbers.reduce((t, n) => t + n, 0);
+
+		const pkg = {
+		name: 'svelte',
+		version: 3,
+		speed: 'blazing',
+		website: 'https://svelte.dev'
+	};
+
 </script>
 
 <main>
@@ -52,6 +61,12 @@
 <hr/>
 <Nested2 answer="{42}"/>
 <Nested2/>
+
+<hr/>
+<Info {...pkg}/>
+<!--   translates into...
+<Info name={pkg.name} version={pkg.version} speed={pkg.speed} website={pkg.website}/>
+-->
 
 <style>
 	main {
