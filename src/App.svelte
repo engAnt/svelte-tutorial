@@ -2,9 +2,10 @@
 	export let name;
 
 	let src = "image-1.gif";
-	let alt_name="A man";
+	let alt_name = "A man";
 
 	import Nested from './Nested.svelte';
+	import Nested2 from './Nested2.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -12,14 +13,17 @@
 		alert('count is dangerously high');
 		count = 9;
 	}
+
 	function handleClick() {
 		count += 1;
 	}
 
 	let numbers = [1, 2, 3, 4];
+
 	function addNumber() {
 		numbers = [...numbers, numbers.length + 1];
 	}
+
 	$: sum = numbers.reduce((t, n) => t + n, 0);
 </script>
 
@@ -44,6 +48,9 @@
 <button on:click={addNumber}>
 	Add a number
 </button>
+
+<hr/>
+<Nested2 answer="{42}"/>
 
 <style>
 	main {
