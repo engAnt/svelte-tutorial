@@ -1,10 +1,15 @@
 <script>
 	export let name;
+
+	let src = "image-1.gif";
+	let alt_name="A man";
 </script>
 
 <main>
 	<h1>Hello {name.toUpperCase()}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+
+	<img {src} alt="{alt_name} dances.">
 </main>
 
 <style>
