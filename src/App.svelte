@@ -51,6 +51,7 @@
 
 <hr/>
 <Nested2 answer="{42}"/>
+<Nested2/>
 
 <style>
 	main {
