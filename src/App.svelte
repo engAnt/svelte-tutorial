@@ -3,18 +3,22 @@
 
 	let src = "image-1.gif";
 	let alt_name="A man";
+
+	import Nested from './Nested.svelte';
 </script>
 
 <main>
 	<h1>Hello {name.toUpperCase()}!</h1>
+
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Nested/>
 
 	<img {src} alt="{alt_name} dances.">
 </main>
 
 <style>
 	main {
-		text-align: center;
+		/*text-align: center;*/
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
