@@ -7,6 +7,7 @@
 	import Nested from './Nested.svelte';
 	import Nested2 from './Nested2.svelte';
 	import Info from './Info.svelte';
+	import LogicTuts from './LogicTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -27,7 +28,7 @@
 
 	$: sum = numbers.reduce((t, n) => t + n, 0);
 
-		const pkg = {
+	const pkg = {
 		name: 'svelte',
 		version: 3,
 		speed: 'blazing',
@@ -67,6 +68,12 @@
 <!--   translates into...
 <Info name={pkg.name} version={pkg.version} speed={pkg.speed} website={pkg.website}/>
 -->
+
+<hr/>
+<h2>Logic</h2>
+<LogicTuts/>
+
+
 
 <style>
 	main {
