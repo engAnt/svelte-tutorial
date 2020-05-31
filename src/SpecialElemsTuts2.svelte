@@ -1,42 +1,37 @@
 <script>
-	let key;
-	let keyCode;
+	let hereKitty = false;
 
-	function handleKeydown(event) {
-		key = event.key;
-		keyCode = event.keyCode;
-	}
+	const handleMouseenter = () => hereKitty = true;
+	const handleMouseleave = () => hereKitty = false;
 </script>
 
 <style>
-	div {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
+	img {
+		position: absolute;
+		left: 0;
+		bottom: -60px;
+		transform: translate(-80%, 0) rotate(-30deg);
+		transform-origin: 100% 100%;
+		transition: transform 0.4s;
 	}
 
-	kbd {
-		background-color: #eee;
-		border-radius: 4px;
-		font-size: 6em;
-		padding: 0.2em 0.5em;
-		border-top: 5px solid rgba(255,255,255,0.5);
-		border-left: 5px solid rgba(255,255,255,0.5);
-		border-right: 5px solid rgba(0,0,0,0.2);
-		border-bottom: 5px solid rgba(0,0,0,0.2);
-		color: #555;
+	.curious {
+		transform: translate(-15%, 0) rotate(0deg);
+	}
+
+	:global(body) {
+		overflow: hidden;
 	}
 </style>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:body
+	on:mouseenter={handleMouseenter}
+	on:mouseleave={handleMouseleave}
+/>
 
-<div style="text-align: center">
-	{#if key}
-		<kbd>{key === ' ' ? 'Space' : key}</kbd>
-		<p>{keyCode}</p>
-	{:else}
-		<p>Focus this window and press any key</p>
-	{/if}
-</div>
+<!-- creative commons BY-NC http://www.pngall.com/kitten-png/download/7247 -->
+<img
+	class:curious={hereKitty}
+	alt="Kitten wants to know what's going on"
+	src="https://svelte.dev/tutorial/kitten.png"
+>

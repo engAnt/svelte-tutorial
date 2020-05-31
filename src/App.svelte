@@ -121,6 +121,8 @@
 <h2>Special elements cont...</h2>
 <SpecialElemsTuts2/>
 
+<hr/>
+
 <style>
 	main {
 		text-align: center;
