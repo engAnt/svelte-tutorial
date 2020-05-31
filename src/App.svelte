@@ -14,6 +14,7 @@
 	import TransitionsTuts from './TransitionsTuts.svelte';
 	import AnimationsTuts from './AnimationsTuts.svelte';
 	import ClassesTuts from './ClassesTuts.svelte';
+	import SpecialElemsTuts from './SpecialElemsTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -109,6 +110,11 @@
 <hr/>
 <h2>Classes</h2>
 <ClassesTuts/>
+
+
+<hr/>
+<h2>Classes</h2>
+<SpecialElemsTuts/>
 
 <style>
 	main {
