@@ -42,12 +42,22 @@
 	function handleSubmit() {
 		alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
 	}
+
+
+	let html = '<p>Write some text!</p>';
 </script>
 
 
 <style>
 	textarea { width: 100%; height: 200px; }
+
 	input { display: block; width: 500px; max-width: 100%; }
+
+	[contenteditable] {
+		padding: 0.5em;
+		border: 5px solid #eee;
+		border-radius: 4px;
+	}
 </style>
 
 
@@ -150,3 +160,12 @@
 </form>
 
 <p>selected question {selected ? selected.id : '[waiting...]'}</p>
+<br/><br/>
+
+
+<div
+	contenteditable="true"
+	bind:innerHTML={html}
+></div>
+
+<pre>{html}</pre>
