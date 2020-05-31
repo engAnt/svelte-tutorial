@@ -8,11 +8,17 @@
 
 
 	let k = { x: 0, y: 0 };
+
+	function handleClick() {
+		alert("no more alerts");
+	}
 </script>
+
 
 <style>
 	div { width: 100%; height: 100px; }
 </style>
+
 
 <div on:mousemove={handleMousemove}>
 	The mouse position is {m.x} x {m.y}
@@ -21,3 +27,5 @@
 <div on:mousemove="{e => k = { x: e.clientX, y: e.clientY }}">
 	The mouse position is {k.x} x {k.y}
 </div>
+
+<button on:click|once={handleClick}>Click me</button>
