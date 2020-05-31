@@ -1,6 +1,8 @@
 <script>
 	import Inner from './Inner.svelte';
 	import Outer from './Outer.svelte';
+	import CustomButton from './CustomButton.svelte';
+
 
 	let m = { x: 0, y: 0 };
 
@@ -20,6 +22,12 @@
 	function handleMessage(event) {
 		alert(event.detail.text);
 	}
+
+
+	function handleClick2() {
+		alert('custom button clicked');
+	}
+
 </script>
 
 
@@ -43,3 +51,6 @@
 <br/><br/>
 
 <Outer on:message={handleMessage}/>
+<br/><br/>
+
+<CustomButton on:click={handleClick2}/>
