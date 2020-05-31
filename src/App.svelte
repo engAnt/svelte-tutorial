@@ -11,6 +11,7 @@
 	import EventsTuts from './EventsTuts.svelte';
 	import BindingsTuts from './BindingsTuts.svelte';
 	import CustomStores from './CustomStores.svelte';
+	import TransitionsTuts from './TransitionsTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -91,6 +92,11 @@
 <hr/>
 <h2>Custom stores</h2>
 <CustomStores/>
+
+
+<hr/>
+<h2>Transitions</h2>
+<TransitionsTuts/>
 
 <style>
 	main {
