@@ -1,4 +1,6 @@
 <script>
+	import ModuleContextTuts from "./ModuleContextTuts.svelte";
+
 	export let name;
 
 	let src = "image-1.gif";
@@ -120,6 +122,10 @@
 <hr/>
 <h2>Special elements cont...</h2>
 <SpecialElemsTuts2/>
+
+<hr/>
+<h2>Module context</h2>
+<ModuleContextTuts/>
 
 <hr/>
 
