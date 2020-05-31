@@ -8,6 +8,7 @@
 	import Nested2 from './Nested2.svelte';
 	import Info from './Info.svelte';
 	import LogicTuts from './LogicTuts.svelte';
+	import EventsTuts from './EventsTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -69,11 +70,15 @@
 <Info name={pkg.name} version={pkg.version} speed={pkg.speed} website={pkg.website}/>
 -->
 
+
 <hr/>
 <h2>Logic</h2>
 <LogicTuts/>
 
 
+<hr/>
+<h2>Events</h2>
+<EventsTuts/>
 
 <style>
 	main {
