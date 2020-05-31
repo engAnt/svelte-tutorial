@@ -13,6 +13,7 @@
 	import CustomStores from './CustomStores.svelte';
 	import TransitionsTuts from './TransitionsTuts.svelte';
 	import AnimationsTuts from './AnimationsTuts.svelte';
+	import ClassesTuts from './ClassesTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -103,6 +104,11 @@
 <hr/>
 <h2>Animations</h2>
 <AnimationsTuts/>
+
+
+<hr/>
+<h2>Classes</h2>
+<ClassesTuts/>
 
 <style>
 	main {
