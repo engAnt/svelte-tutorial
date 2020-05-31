@@ -9,6 +9,7 @@
 	import Info from './Info.svelte';
 	import LogicTuts from './LogicTuts.svelte';
 	import EventsTuts from './EventsTuts.svelte';
+	import BindingsTuts from './BindingsTuts.svelte';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -79,6 +80,11 @@
 <hr/>
 <h2>Events</h2>
 <EventsTuts/>
+
+
+<hr/>
+<h2>Bindings</h2>
+<BindingsTuts/>
 
 <style>
 	main {
