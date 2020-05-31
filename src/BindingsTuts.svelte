@@ -1,5 +1,7 @@
 <script>
 	import marked from 'marked';
+	import MoreBindgins from './MoreBindings.svelte';
+	import MoreBindings from "./MoreBindings.svelte";
 
 
 	let name = 'world';
@@ -30,9 +32,9 @@
 
 
 	let questions = [
-		{ id: 1, text: `Where did you go to school?` },
-		{ id: 2, text: `What is your mother's name?` },
-		{ id: 3, text: `What is another personal fact that an attacker could easily find with Google?` }
+		{id: 1, text: `Where did you go to school?`},
+		{id: 2, text: `What is your mother's name?`},
+		{id: 3, text: `What is another personal fact that an attacker could easily find with Google?`}
 	];
 
 	let selected;
@@ -169,3 +171,7 @@
 ></div>
 
 <pre>{html}</pre>
+
+
+<br/>
+<MoreBindings />
