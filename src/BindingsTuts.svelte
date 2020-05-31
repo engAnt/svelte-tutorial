@@ -1,4 +1,7 @@
 <script>
+	import marked from 'marked';
+
+
 	let name = 'world';
 
 
@@ -21,7 +24,16 @@
 		if (flavours.length === 1) return flavours[0];
 		return `${flavours.slice(0, -1).join(', ')} and ${flavours[flavours.length - 1]}`;
 	}
+
+
+	let value = `Some words are *italic*, some are **bold**`;
 </script>
+
+
+<style>
+	textarea { width: 100%; height: 200px; }
+</style>
+
 
 <input bind:value={name}>
 
@@ -93,3 +105,8 @@
 		of {join(flavours)}
 	</p>
 {/if}
+
+<br/><br/>
+<textarea bind:value></textarea>
+
+{@html marked(value)}
