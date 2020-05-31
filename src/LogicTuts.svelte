@@ -8,13 +8,16 @@
         user.loggedIn = !user.loggedIn;
     }
 
+
     let x = 7;
+
 
     let cats = [
 		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
 		{ id: 'z_AbfPXTKms', name: 'Maru' },
 		{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
 	];
+
 
     let things = [
         { id: 1, color: '#0d0887' },
@@ -26,6 +29,24 @@
     function handleClick() {
         things = things.slice(1);
     }
+
+
+    let promise = getRandomNumber();
+
+    async function getRandomNumber() {
+		const res = await fetch(`https://svelte.dev/tutorial/random-number`);
+		const text = await res.text();
+
+		if (res.ok) {
+			return text;
+		} else {
+			throw new Error(text);
+		}
+	}
+
+	function handleClick2() {
+		promise = getRandomNumber();
+	}
 </script>
 
 {#if user.loggedIn}
@@ -38,6 +59,7 @@
   </button>
 {/if}
 
+
 {#if x > 10}
   <p>{x} is greater than 10</p>
 {:else if 5 > x}
@@ -45,6 +67,7 @@
 {:else}
   <p>{x} is between 5 and 10</p>
 {/if}
+
 
 <h3>The Famous Cats of Youtube</h3>
 <ul>
@@ -55,9 +78,23 @@
     {/each}
 </ul>
 
+
 <button on:click={handleClick}>
 	Remove first thing
 </button>
 {#each things as thing (thing.id)}
 	<Thing current={thing.color}/>
 {/each}
+
+
+<button on:click={handleClick2}>
+	generate random number
+</button>
+
+{#await promise}
+	<p>...waiting</p>
+{:then number}
+	<p>The number is {number}</p>
+{:catch error}
+	<p style="color: red">{error.message}</p>
+{/await}
